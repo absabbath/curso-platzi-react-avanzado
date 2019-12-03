@@ -3,9 +3,12 @@ import { Anchor, Image } from './styles'
 
 const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
 
-export const Category = ({ cover = DEFAULT_IMAGE, path, emoji = '?' }) => (
-  <Anchor href={path}>
-    <Image src={cover} />
-    {emoji}
-  </Anchor>
-)
+export const Category = ({ cover = DEFAULT_IMAGE, patherno, emoji = '?' }) => {
+  console.log(patherno)
+  return (
+    <Anchor href={patherno}>
+      <Image src={cover} />
+      {emoji}
+    </Anchor>
+  )
+}

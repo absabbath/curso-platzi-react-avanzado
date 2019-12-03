@@ -12,6 +12,7 @@ function useCategoriesData () {
     window.fetch('https://petgram-server.midudev.now.sh/categories')
       .then(res => res.json())
       .then(response => {
+        console.log(response)
         setCategories(response)
         setLoading(false)
       })
@@ -40,7 +41,7 @@ export const ListOfCategories = () => {
       {
         loading
           ? <Item key='loading'><Category /></Item>
-          : categories.map(category => <Item key={category.id}><Category {...category} /></Item>)
+          : categories.map(category => <Item key={category.id}><Category patherno={`/pet/${category.id}`} {...category} /></Item>)
       }
     </List>
   )
